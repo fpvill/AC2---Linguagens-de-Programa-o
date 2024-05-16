@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const cargoSelect = document.getElementById("cargoSelect");
     const convenioSelect = document.getElementById("convenioSelect");
 
-    // Função para carregar opções de seleção
+    
     function carregarOpcoes(url, select) {
         return new Promise((resolve, reject) => {
             const xhr = new XMLHttpRequest();
@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 
-    // Carregar opções de seleção para cargo, setor e convênio em paralelo
+    
     Promise.all([
         carregarOpcoes("https://aulalp2024.free.beeceptor.com/setor", setorSelect),
         carregarOpcoes("https://aulalp2024.free.beeceptor.com/cargo", cargoSelect),
@@ -38,12 +38,12 @@ document.addEventListener("DOMContentLoaded", function() {
         console.error("Erro ao carregar opções:", error);
     });
 
-    // Evento de envio do formulário
+    
     const form = document.getElementById("cadastroForm");
     form.addEventListener("submit", function(event) {
         event.preventDefault();
         
-        // Obter dados do formulário
+  
         const dados = {
             nome: document.getElementById("nome").value,
             telefone: document.getElementById("telefone").value,
